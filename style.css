@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  margin: 100px auto;
+  margin: 100px auto 15px;
   width : 65vw;
   color : #e7e7e7;
 }
@@ -166,13 +166,38 @@ body {
   border: 2px solid red;
 }
 
-#page_list {
-  margin         : 50px auto;
-  width          : 400px;
+.down {
+  padding        : 0;
   display        : flex;
+  justify-content: center;
   align-items    : center;
-  justify-content: space-between;
-  list-style-type: none;
-  font-size      : 20px;
-  color          : #f1f1f1;
+}
+
+#more {
+  margin          : 0 auto 50px;
+  width           : 400px;
+  height          : 50px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  font-size       : 25px;
+  font-weight     : 500;
+  text-transform  : uppercase;
+  color           : #f1f1f1;
+  background-color: rgb(93, 93, 93);
+  border-radius   : 10px;
+}
+
+#more:hover {
+  background-color: rgb(158, 158, 158);
+  color           : rgb(46, 46, 46);
+}
+
+#more:active {
+  transform: scale(0.96);
+}
+
+#more:disabled {
+  pointer-events: none;
+  opacity       : 0.65;
 }

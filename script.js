@@ -1,8 +1,9 @@
 const API = 'd89a0e08-9108-4238-97a8-a35757336636'
-let API_URL = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page='
+let API_URL = 'https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=5'
 const API_SEARCH_URL = 'https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=%D0%BB%D1%8E%D0%B4&page=1'
-let lis = document.querySelectorAll('.lis')
+let more = document.querySelector('#more')
 const inp = document.querySelector('#inp')
+
 getMovies(API_URL)
 
 async function getMovies(url) {
@@ -57,18 +58,11 @@ function showMovies(data) {
   });
 }
 
-for (let elem of lis) {
-  elem.addEventListener('click', function changeThePage() {
-    API_URL += '2'
-
-  })
-}
-
-
-
-inp.addEventListener('input', function getMoviesBySearch(url) {
-
+let count = 1
+more.addEventListener('click', function changeThePage() {
+  count++
+  let newPage = API_URL + count
+  console.log(newPage);
+  getMovies(newPage)
 })
-
-
 
