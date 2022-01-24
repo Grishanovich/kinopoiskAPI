@@ -173,6 +173,6 @@ body {
   align-items    : center;
   justify-content: space-between;
   list-style-type: none;
-  font-size: 20px;
-  color: #fafafa;
+  font-size      : 20px;
+  color          : #f1f1f1;
 }
