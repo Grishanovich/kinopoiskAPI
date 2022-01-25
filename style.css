@@ -38,7 +38,7 @@ body {
 }
 
 .container {
-  margin: 100px auto 15px;
+  margin: 17px auto 15px;
   width : 65vw;
   color : #e7e7e7;
 }
@@ -59,23 +59,32 @@ body {
   outline      : none;
   font-size    : 1em;
   padding-left : 10px;
-
 }
 
-#btn {
-  display       : inline-block;
-  box-sizing    : border-box;
-  outline       : none;
-  border        : none;
-  border-radius : 15px;
-  height        : 50px;
-  width         : 200px;
-  line-height   : 40px;
-  font-size     : 18px;
-  font-weight   : 600;
-  color         : #3a3a3a;
+.container_types {
+  width : 65vw;
+  margin: 10vh auto 0;
+}
+
+.navigation_types {
+  font-size     : 30px;
   text-transform: uppercase;
-  margin-left   : 30px;
+  display       : flex;
+  align-items   : center;
+  justify-content: space-around;
+  width      : 20vw;
+  margin-left: 20px;
+}
+
+.p_types {
+  color           : #f1f1f1;
+  background-color: rgb(93, 93, 93);
+  border-radius   : 10px;
+  padding         : 7px;
+}
+
+.radio{
+  display: none;
 }
 
 .movie:focus-visible {
