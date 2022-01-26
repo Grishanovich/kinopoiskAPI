@@ -84,7 +84,7 @@ body {
 }
 
 .radio{
-  display: none;
+  /* display: none; */
 }
 
 .movie:focus-visible {

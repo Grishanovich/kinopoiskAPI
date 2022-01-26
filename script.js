@@ -11,16 +11,6 @@ let radio = document.querySelectorAll('.radio')
 
 getMovies(API_URL_100)
 
-top100.addEventListener('click', function getTop100() {
-  
-  getMovies(API_URL_100)
-  if (!radio[0].checked) radio[0].checked = true
-})
-
-top250.addEventListener('click', function getTop250() {
-  getMovies(API_URL_250)
-  if (!radio[1].checked) radio[1].checked = true
-})
 
 async function getMovies(url) {
   const response = await fetch(url, {
@@ -32,7 +22,6 @@ async function getMovies(url) {
   const respData = await response.json()
   showMovies(respData);
 }
-
 
 function showMovies(data) {
   const moviesEl = document.querySelector('#movies')
@@ -48,11 +37,12 @@ function showMovies(data) {
     movie.genres.forEach(function (genre) {
       sortMovieGenre.push(genre.genre)
     })
+
     const movieEl = document.createElement("div")
     movieEl.classList.add("movie")
     movieEl.innerHTML = `
     <div id="movie_content">
-    <img class="movie_img" src="${movie.posterUrlPreview}" alt="">
+    <img class="movie_img" src="${movie.posterUrlPreview}" alt="${movie.nameRu}">
     </div>
     <div id="movie_info">
         <div id="movie_name">${movie.nameRu}</div>
@@ -66,20 +56,11 @@ function showMovies(data) {
 
 
 let counterTop100 = 1
-let counterTop250 = 1
 more.addEventListener('click', function changeThePage() {
-  if (radio[0].checked == true) {
     counterTop100++
     let newPage = API_URL_100 + counterTop100
     console.log(newPage);
     getMovies(newPage)
-  }
-  if (radio[1].checked == true) {
-    counterTop250++
-    let newPage = API_URL_250 + counterTop250
-    console.log(newPage);
-    getMovies(newPage)
-  }
 })
 
 function getClassByRate(vote) {
